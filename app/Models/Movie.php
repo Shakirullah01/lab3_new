@@ -17,12 +17,12 @@ class Movie extends Model
         'description',
         'image_path',
     ];
-
+ #Mutator for year
     public function setYearAttribute($value)
     {
         $this->attributes['year'] = (int)$value;
     }
-
+#For image path
     public function getImageUrlAttribute()
     {
         return $this->image_path ? asset('storage/' . $this->image_path) : null;
